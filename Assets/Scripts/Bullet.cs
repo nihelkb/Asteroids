@@ -28,10 +28,7 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision){
 
-        
-
         if(collision.gameObject.CompareTag("Enemy")){
-            
             // Dividir el asteroide en dos mini-asteroides.
             SplitAsteroid(collision.transform.position, collision.transform.rotation);
 
@@ -41,8 +38,8 @@ public class Bullet : MonoBehaviour
             // Destruir el asteroide y la bala.
             Destroy(collision.gameObject);
             Destroy(gameObject);
+
         }else if(collision.gameObject.CompareTag("MiniEnemy")){
-            Debug.Log("He colisionado 2");
             // Aumentar la puntuación.
             IncreaseScore();
             // Destruir el asteroide y la bala.
@@ -52,18 +49,18 @@ public class Bullet : MonoBehaviour
     }
 
     void SplitAsteroid(Vector3 position, Quaternion rotation){
-        // Calcular la dirección bisectriz en relación con la dirección de la bala original.
+        // Calcular la dirección bisectriz en relación con la dirección de la bala original
         Vector2 bisectorDirection = Quaternion.Euler(0, 0, 45) * targetVector.normalized;
 
-        // Calcular las direcciones de los mini-asteroides con un ángulo fijo en relación con la bisectriz.
+        // Calcular las direcciones de los mini-asteroides con un ángulo fijo en relación con la bisectriz
         Vector2 miniAsteroidDirection1 = Quaternion.Euler(0, 0, 22.5f) * bisectorDirection;
         Vector2 miniAsteroidDirection2 = Quaternion.Euler(0, 0, -22.5f) * bisectorDirection;
 
-        // Crear dos mini-asteroides.
+        // Crear dos mini-asteroides
         GameObject miniAsteroid1 = Instantiate(miniAsteroidPrefab, position, rotation);
         GameObject miniAsteroid2 = Instantiate(miniAsteroidPrefab, position, rotation);
 
-        // Asignar las direcciones calculadas a los mini-asteroides.
+        // Asignar las direcciones calculadas a los mini-asteroides
         miniAsteroid1.GetComponent<MiniAsteroidController>().moveDirection = miniAsteroidDirection1;
         miniAsteroid2.GetComponent<MiniAsteroidController>().moveDirection = miniAsteroidDirection2;
     }
