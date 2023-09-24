@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     public static float xBorderLimit, yBorderLimit;
 
     public GameObject gun, bulletPrefab;
+    public GameObject miniAsteroidPrefab;
 
     public Rigidbody _rigidbody;
 
@@ -71,6 +72,8 @@ public class Player : MonoBehaviour
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             // Le damos dirección a la bala
             bulletScript.targetVector = transform.right;
+            // Agregar una referencia al prefab del mini-asteroide.
+            bulletScript.miniAsteroidPrefab = miniAsteroidPrefab;
         }
 
     }
