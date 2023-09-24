@@ -485,7 +485,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press <esc> for resume
+  m_Text: Press  <esc>  for  resume
 --- !u!222 &760023039
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -626,7 +626,7 @@ MonoBehaviour:
   gun: {fileID: 1489121743}
   bulletPrefab: {fileID: 7276151053548410471, guid: aa4e56e05c5e91b4f8f5bd51de29d8c5, type: 3}
   miniAsteroidPrefab: {fileID: 7409927035360680942, guid: db40bb56bc046cb498003f5443b3d439, type: 3}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 956186738}
 --- !u!136 &956186742
 CapsuleCollider:
   m_ObjectHideFlags: 0
