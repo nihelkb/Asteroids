@@ -67,7 +67,12 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){ 
 
             // Al pulsar espacio se instancia un nuevo objeto bala
-            GameObject bullet = Instantiate(bulletPrefab, gun.transform.position, Quaternion.identity);
+            GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+
+            bullet.transform.position = gun.transform.position;
+            bullet.transform.rotation = Quaternion.identity;
+            bullet.SetActive(true);
+
             // Obtener la referencia al gameobject de la bala
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             // Le damos dirección a la bala
