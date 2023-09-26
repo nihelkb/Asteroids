@@ -53,8 +53,8 @@ public class Bullet : MonoBehaviour
         Vector2 bisectorDirection = Quaternion.Euler(0, 0, 45) * targetVector.normalized;
 
         // Calcular las direcciones de los mini-asteroides con un ángulo fijo en relación con la bisectriz
-        Vector2 miniAsteroidDirection1 = Quaternion.Euler(0, 0, 22.5f) * bisectorDirection;
-        Vector2 miniAsteroidDirection2 = Quaternion.Euler(0, 0, -22.5f) * bisectorDirection;
+        Vector2 miniAsteroidDirection1 = Quaternion.Euler(0, 0, 30f) * bisectorDirection;
+        Vector2 miniAsteroidDirection2 = Quaternion.Euler(0, 0, -30f) * bisectorDirection;
 
         // Crear dos mini-asteroides
         GameObject miniAsteroid1 = Instantiate(miniAsteroidPrefab, position, rotation);

@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter(Collision collision){
 
         // Si el jugador se choca con un asteroide entonces la nave muere
-        if(collision.gameObject.tag == "Enemy"){
+        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "MiniEnemy"){
             SCORE = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
